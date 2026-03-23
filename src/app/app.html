@@ -1,0 +1,13 @@
+<div class="topbar">
+  <h1>Dashboard</h1>
+  <p class="user-info">{{ user().username }} ({{ user().email }})</p>
+</div>
+<div class="dashboard">
+  <app-widget1 class="widget" [user]="user()"></app-widget1>
+  <app-widget2 class="widget" [user]="user()"></app-widget2>
+  <app-widget3 class="widget" [user]="user()"></app-widget3>
+  <app-widget4 class="widget" [user]="user()"></app-widget4>
+  <app-widget5 class="widget" [user]="user()"></app-widget5>
+  <app-widget6 class="widget" [user]="user()"></app-widget6>
+  <app-widget7 class="widget" [user]="user()"></app-widget7>
+</div>

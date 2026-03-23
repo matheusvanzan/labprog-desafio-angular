@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0b1039;
+}
+
+:host {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0b1039;
+  color: #f7f8ff;
+}
+
+.topbar, .dashboard, .widget {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.topbar {
+  background: #121c52;
+  padding: 0.5rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #ffffff;
+  flex: 1;
+  font-weight: 700;
+}
+
+.user-info {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  font-weight: 500;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.widget {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 1rem;
+  background: linear-gradient(180deg, rgba(17, 29, 71, 0.95), rgba(13, 21, 55, 0.95));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  cursor: default;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #eceefb;
+}
+
+.widget:hover {
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+}
+
+@media (max-width: 1400px) {
+  .dashboard {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    padding: 0.75rem;
+    gap: 0.75rem;
+  }
+
+  .topbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .topbar h1 {
+    font-size: 1rem;
+  }
+}
