@@ -1,1 +1,29 @@
-<p>Widget 2</p>
+<div class="w2-card">
+  <div class="w2-header">
+    <span class="w2-icon">😂</span>
+    <h2 class="w2-title">Dad Joke</h2>
+  </div>
+
+  <div class="w2-body">
+    @if (loading()) {
+      <div class="w2-loading">
+        <div class="w2-spinner"></div>
+        <span>Carregando piada...</span>
+      </div>
+    } @else if (error()) {
+      <div class="w2-error">
+        <span class="w2-error-icon">⚠️</span>
+        <p>{{ error() }}</p>
+      </div>
+    } @else {
+      <p class="w2-joke">{{ joke() }}</p>
+    }
+  </div>
+
+  <div class="w2-footer">
+    <button class="w2-btn" (click)="fetchJoke()" [disabled]="loading()">
+      <span class="w2-btn-icon">🔄</span>
+      Nova piada
+    </button>
+  </div>
+</div>

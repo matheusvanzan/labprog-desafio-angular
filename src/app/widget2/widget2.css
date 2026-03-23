@@ -1,0 +1,136 @@
+/* Widget 2 - Dad Joke Card */
+
+.w2-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.w2-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.w2-icon {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.w2-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #c8d0ff;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Body */
+.w2-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80px;
+}
+
+.w2-joke {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #eceefb;
+  line-height: 1.6;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+/* Loading */
+.w2-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.82rem;
+}
+
+.w2-spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #7c8fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Error */
+.w2-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.w2-error-icon {
+  font-size: 1.4rem;
+}
+
+.w2-error p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #ff8080;
+}
+
+/* Footer / Button */
+.w2-footer {
+  display: flex;
+  justify-content: center;
+}
+
+.w2-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1.1rem;
+  background: linear-gradient(135deg, #3a4ccc, #5a70ff);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  font-family: inherit;
+}
+
+.w2-btn:hover:not(:disabled) {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.w2-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.w2-btn-icon {
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
