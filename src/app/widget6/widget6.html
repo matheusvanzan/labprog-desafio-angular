@@ -1,1 +1,22 @@
-<p>Widget 6</p>
+<div class="widget-card">
+  <h3>Agify</h3>
+
+  <div class="content" *ngIf="user?.username; else noUser">
+    <p>Nome consultado: <strong>{{ user?.username }}</strong></p>
+
+    <p *ngIf="loading">Calculando idade...</p>
+    <p *ngIf="error" class="error">Falha ao buscar a idade.</p>
+
+    <p *ngIf="estimatedAge !== null && !loading && !error">
+      Idade estimada: <strong>{{ estimatedAge }} anos</strong>
+    </p>
+
+    <button (click)="loadAge()" [disabled]="loading">
+      {{ loading ? 'Buscando...' : 'Recarregar consulta' }}
+    </button>
+  </div>
+
+  <ng-template #noUser>
+    <p>Aguardando usuário...</p>
+  </ng-template>
+</div>
