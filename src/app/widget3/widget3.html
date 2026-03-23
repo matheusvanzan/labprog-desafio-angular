@@ -1,1 +1,19 @@
-<p>Widget 3</p>
+<div class="widget-container">
+  <h3>Dog CEO</h3>
+
+  <div *ngIf="loading()">
+    <p>Buscando um doguinho...</p>
+  </div>
+  
+  <div *ngIf="error()" style="color: red;">
+    <p>Erro ao carregar a imagem.</p>
+  </div>
+
+  <div *ngIf="dogImageUrl() && !loading()" class="image-wrapper">
+    <img [src]="dogImageUrl()" alt="Cachorro Aleatório" style="width: 100%; border-radius: 8px;">
+  </div>
+
+  <button (click)="fetchDogImage()" [disabled]="loading()">
+    {{ loading() ? 'Carregando...' : 'Ver outro cachorro' }}
+  </button>
+</div>
