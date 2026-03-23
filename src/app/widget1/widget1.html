@@ -1,1 +1,11 @@
-<p>Widget 1</p>
+<p>Conselhos aleatórios</p>
+
+<div *ngIf="loading()">Carregando...</div>
+<div *ngIf="error()">Erro: {{ error }}</div>
+
+<div *ngIf="!loading() && data()">
+    <h3>Conselho para {{ user?.username }}: {{ data()?.slip?.advice }}</h3>
+    <p>Id: {{ data()?.slip?.id }}</p>
+</div>
+
+<button (click)="fetchData()">Pedir conselho</button>
