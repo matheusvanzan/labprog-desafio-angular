@@ -1,1 +1,35 @@
-<p>Widget 7</p>
+<div class="container">
+  <h3>Genderize</h3>
+
+  <div class="busca">
+    <input
+      type="text"
+      [(ngModel)]="nomeInput"
+      placeholder="Digite um nome..."
+      (keyup.enter)="buscarGenero()"
+    />
+    <button (click)="buscarGenero()" [disabled]="carregando()">Buscar</button>
+  </div>
+
+  @if (carregando()) {
+    <p class="status">Buscando...</p>
+  }
+
+  @if (erro()) {
+    <p class="status erro">{{ erro() }}</p>
+  }
+
+  @if (!carregando() && !erro() && genero()) {
+    <div class="resultado">
+      <p>
+        Nome: <strong>{{ nomeBuscado() }}</strong>
+      </p>
+      <p>
+        Gênero: <strong class="genero-valor">{{ traduzirGenero() }}</strong>
+      </p>
+      <p>
+        Probabilidade: <strong class="prob-valor">{{ probEmPorcentagem() }}</strong>
+      </p>
+    </div>
+  }
+</div>

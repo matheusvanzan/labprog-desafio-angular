@@ -1,0 +1,84 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+h3 {
+  color: #a8b4ff;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.busca {
+  display: flex;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.busca input {
+  flex: 1;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #eceefb;
+  font-size: 0.8rem;
+  outline: none;
+}
+
+.busca input::placeholder {
+  color: #6b72a3;
+}
+
+.busca input:focus {
+  border-color: #a8b4ff;
+}
+
+button {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #c9cde8;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.status {
+  color: #8a92c4;
+  font-size: 0.85rem;
+}
+
+.erro {
+  color: #ff6b6b;
+}
+
+.resultado {
+  text-align: center;
+}
+
+.resultado p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #c9cde8;
+}
+
+.genero-valor {
+  color: #7ee8a8;
+}
+
+.prob-valor {
+  color: #ffd580;
+}
