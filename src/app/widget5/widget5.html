@@ -1,1 +1,29 @@
-<p>Widget 5</p>
+<section class="quote-card">
+  <header class="quote-card__header">
+    <p class="quote-card__eyebrow">Widget 5</p>
+    <h2 class="quote-card__title">Random Quote</h2>
+    <p class="quote-card__subtitle">
+      Citacao aleatoria para {{ user?.username || 'visitante' }}
+    </p>
+  </header>
+
+  <div class="quote-card__content">
+    @if (loading()) {
+      <p class="quote-card__status">Carregando citacao...</p>
+    } @else if (error()) {
+      <p class="quote-card__status quote-card__status--error">{{ error() }}</p>
+    } @else if (quote(); as currentQuote) {
+      <blockquote class="quote-card__quote">
+        "{{ currentQuote.quote }}"
+      </blockquote>
+      <p class="quote-card__author">{{ currentQuote.author }}</p>
+    }
+  </div>
+
+  <footer class="quote-card__footer">
+    <button type="button" (click)="loadQuote()" [disabled]="loading()">
+      {{ loading() ? 'Carregando...' : 'Nova citacao' }}
+    </button>
+    <p class="quote-card__meta">{{ user?.email || 'Sem e-mail informado' }}</p>
+  </footer>
+</section>
