@@ -1,0 +1,28 @@
+.widget {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+p {
+  margin: 8px 0;
+}
+
+.error {
+  color: red;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.footer p {
+  margin: 0;
+}
