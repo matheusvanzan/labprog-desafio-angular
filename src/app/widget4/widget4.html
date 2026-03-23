@@ -1,1 +1,20 @@
-<p>Widget 4</p>
+<div class="widget">
+  <h3>Useless Facts</h3>
+
+  @if (loading()) {
+    <p>Carregando...</p>
+  }
+
+  @if (error) {
+    <p class="error">{{ error }}</p>
+  }
+
+  @if (fact) {
+    <p>{{ fact }}</p>
+  }
+
+  <div class="footer">
+    <p>Usuário: {{ user?.username }}</p>
+    <button (click)="fetchFact()">Novo Fato</button>
+  </div>
+</div>
